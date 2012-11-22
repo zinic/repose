@@ -13,7 +13,7 @@
    <version>2.4.1-SNAPSHOT</version>
 
    <name>Repose Core - Core Support</name>
-    
+
    <packaging>pom</packaging>
 
    <modules>
@@ -21,9 +21,27 @@
       <module>web-application</module>
       <module>valve</module>
    </modules>
-    
+
    <dependencyManagement>
       <dependencies>
+         <dependency>
+            <groupId>org.atomnuke</groupId>
+            <artifactId>nuke</artifactId>
+            <version>1.1.5</version>
+         </dependency>
+
+         <dependency>
+            <groupId>org.atomnuke.container</groupId>
+            <artifactId>container-core</artifactId>
+            <version>1.1.5</version>
+         </dependency>
+
+         <dependency>
+            <groupId>org.atomnuke.container</groupId>
+            <artifactId>fallout</artifactId>
+            <version>1.1.5</version>
+         </dependency>
+
          <dependency>
             <groupId>net.sf.ehcache</groupId>
             <artifactId>ehcache-core</artifactId>
@@ -41,13 +59,13 @@
             <artifactId>core-lib</artifactId>
             <version>${project.version}</version>
          </dependency>
-         
+
          <dependency>
             <groupId>com.rackspace.papi.external</groupId>
             <artifactId>jee6-schemas</artifactId>
             <version>2.4.1-SNAPSHOT</version>
          </dependency>
-        
+
          <dependency>
             <groupId>org.jboss.netty</groupId>
             <artifactId>netty</artifactId>
@@ -65,13 +83,13 @@
             <artifactId>utilities</artifactId>
             <version>2.4.1-SNAPSHOT</version>
          </dependency>
-            
+
          <dependency>
             <groupId>com.rackspace.papi.commons</groupId>
             <artifactId>jetty-container</artifactId>
             <version>2.4.1-SNAPSHOT</version>
          </dependency>
-            
+
          <dependency>
             <groupId>com.rackspace.papi.commons</groupId>
             <artifactId>classloader</artifactId>

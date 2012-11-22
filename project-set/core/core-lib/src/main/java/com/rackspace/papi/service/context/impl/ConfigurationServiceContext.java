@@ -29,7 +29,7 @@ public class ConfigurationServiceContext implements ServiceContext<Configuration
 
     @Autowired
     public ConfigurationServiceContext(
-            @Qualifier("configurationManager") ConfigurationService configurationManager, 
+            @Qualifier("configurationManager") ConfigurationService configurationManager,
             @Qualifier("serviceRegistry") ServiceRegistry registry,
             @Qualifier("eventManager") EventService eventSerivce) {
        this.configurationManager = configurationManager;

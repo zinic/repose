@@ -8,10 +8,15 @@ import com.rackspace.papi.commons.util.Destroyable;
 
 public interface ConfigurationService extends Destroyable {
 
-    void setResourceResolver(ConfigurationResourceResolver resourceResolver);
-    void setUpdateManager(ConfigurationUpdateManager updateManager);
-    <T> void subscribeTo(String configurationName, UpdateListener<T> listener, Class<T> configurationClass);
-    <T> void subscribeTo(String configurationName, UpdateListener<T> listener, ConfigurationParser<T> customParser);
-    <T> void subscribeTo(String configurationName, UpdateListener<T> listener, ConfigurationParser<T> customParser, boolean sendNotificationNow);
-    void unsubscribeFrom(String configurationName, UpdateListener plistener);
+   void setResourceResolver(ConfigurationResourceResolver resourceResolver);
+
+   void setUpdateManager(ConfigurationUpdateManager updateManager);
+
+   <T> void subscribeTo(String configurationName, UpdateListener<T> listener, Class<T> configurationClass);
+
+   <T> void subscribeTo(String configurationName, UpdateListener<T> listener, ConfigurationParser<T> customParser);
+
+   <T> void subscribeTo(String configurationName, UpdateListener<T> listener, ConfigurationParser<T> customParser, boolean sendNotificationNow);
+
+   void unsubscribeFrom(String configurationName, UpdateListener plistener);
 }

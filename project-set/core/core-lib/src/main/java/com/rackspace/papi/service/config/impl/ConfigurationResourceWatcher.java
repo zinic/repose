@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
+import org.atomnuke.util.lifecycle.runnable.ReclaimableTaskPartial;
 
 /**
  * This class represents a thread that continuously monitors configuration
@@ -18,15 +19,16 @@ import java.util.Map;
  * However, one of the requirements of PAPI is that a user can drop a resource
  * into the resources directory and PAPI will begin processing it on the fly. So
  * these "standard" exceptions will be caught but will allow the normal thread
- * processing to continue.   
+ * processing to continue.
  *
  */
-public class ConfigurationResourceWatcher implements RecurringTask {
+public class ConfigurationResourceWatcher extends ReclaimableTaskPartial implements RecurringTask {
 
    private static final Logger LOG = LoggerFactory.getLogger(ConfigurationResourceWatcher.class);
+
    private final Map<String, ConfigurationResource> watchMap;
    private final EventService eventManager;
-   
+
    public ConfigurationResourceWatcher(EventService eventManager) {
       this.eventManager = eventManager;
       watchMap = new HashMap<String, ConfigurationResource>();
