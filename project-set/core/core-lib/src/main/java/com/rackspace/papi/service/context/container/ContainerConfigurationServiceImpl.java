@@ -10,9 +10,8 @@ import java.util.List;
 public class ContainerConfigurationServiceImpl implements ContainerConfigurationService {
 
    private final List<Port> ports;
-
    private int contentBodyReadLimit;
-   private String viaValue;
+   private String viaValue, deploymentDirectory, artifactDirectory;
 
    public ContainerConfigurationServiceImpl() {
       ports = new ArrayList<Port>();
@@ -24,6 +23,26 @@ public class ContainerConfigurationServiceImpl implements ContainerConfiguration
       this.ports.addAll(ports);
       this.viaValue = via;
       this.contentBodyReadLimit = contentBodyReadLimit;
+   }
+
+   @Override
+   public void setDeploymentDirectory(String deploymentDirectory) {
+      this.deploymentDirectory = deploymentDirectory;
+   }
+
+   @Override
+   public void setArtifactDirectory(String artifactDirectory) {
+      this.artifactDirectory = artifactDirectory;
+   }
+
+   @Override
+   public String getDeploymentDirectory() {
+      return deploymentDirectory;
+   }
+
+   @Override
+   public String getArtifactDirectory() {
+      return artifactDirectory;
    }
 
    @Override

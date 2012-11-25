@@ -11,11 +11,11 @@ import org.atomnuke.service.runtime.AbstractRuntimeService;
  * @author zinic
  */
 @NukeService
-public class NukeThreadingService extends AbstractRuntimeService {
+public class ThreadingServiceContext extends AbstractRuntimeService {
 
    private final ThreadingService service;
 
-   public NukeThreadingService() {
+   public ThreadingServiceContext() {
       super(ThreadingService.class);
 
       service = new ThreadingServiceImpl();

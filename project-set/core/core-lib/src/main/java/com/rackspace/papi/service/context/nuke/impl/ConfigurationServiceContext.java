@@ -24,13 +24,13 @@ import org.slf4j.LoggerFactory;
  */
 @NukeService
 @Requires({TaskingService.class, EventService.class})
-public class NukeConfigurationService extends AbstractRuntimeService {
+public class ConfigurationServiceContext extends AbstractRuntimeService {
 
-   private static final Logger LOG = LoggerFactory.getLogger(NukeConfigurationService.class);
+   private static final Logger LOG = LoggerFactory.getLogger(ConfigurationServiceContext.class);
 
    private ConfigurationService service;
 
-   public NukeConfigurationService() {
+   public ConfigurationServiceContext() {
       super(ConfigurationService.class);
    }
 

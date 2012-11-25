@@ -24,15 +24,15 @@ import org.slf4j.LoggerFactory;
  */
 @NukeService
 @Requires({ConfigurationService.class})
-public class NukeContainerCfgContext extends AbstractRuntimeService {
+public class ContainerConfigurationContext extends AbstractRuntimeService {
 
-   private static final Logger LOG = LoggerFactory.getLogger(NukeContainerCfgContext.class);
+   private static final Logger LOG = LoggerFactory.getLogger(ContainerConfigurationContext.class);
 
    private final ContainerConfigurationService containerConfigurationService;
    private final UpdateListener<ContainerConfiguration> containerCfgUpdateListener;
    private ConfigurationService configurationService;
 
-   public NukeContainerCfgContext() {
+   public ContainerConfigurationContext() {
       super(ContainerConfigurationService.class);
 
       containerCfgUpdateListener = new ContainerConfigurationListener();
@@ -100,6 +100,8 @@ public class NukeContainerCfgContext extends AbstractRuntimeService {
                LOG.info("Setting " + InitParameter.PORT.getParameterName() + " to " + configuredPorts);
 
                containerConfigurationService.setVia(via);
+               containerConfigurationService.setArtifactDirectory(deployConfig.getArtifactDirectory().getValue());
+               containerConfigurationService.setDeploymentDirectory(deployConfig.getDeploymentDirectory().getValue());
                containerConfigurationService.setContentBodyReadLimit(maxResponseContentSize);
                containerConfigurationService.getPorts().addAll(configuredPorts);
             } else {

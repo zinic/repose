@@ -18,14 +18,14 @@ import org.atomnuke.service.runtime.AbstractRuntimeService;
  */
 @NukeService
 @Requires(ThreadingService.class)
-public class NukeEventService extends AbstractRuntimeService {
+public class EventServiceContext extends AbstractRuntimeService {
 
    private final PowerProxyEventKernel eventKernel;
    private final EventService eventService;
 
    private DestroyableThreadWrapper eventKernelThread;
 
-   public NukeEventService() {
+   public EventServiceContext() {
       super(EventService.class);
 
       eventService = new PowerProxyEventManager();
