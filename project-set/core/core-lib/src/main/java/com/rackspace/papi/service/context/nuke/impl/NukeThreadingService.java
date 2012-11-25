@@ -16,7 +16,7 @@ public class NukeThreadingService extends AbstractRuntimeService {
    private final ThreadingService service;
 
    public NukeThreadingService() {
-      super(NukeThreadingService.class);
+      super(ThreadingService.class);
 
       service = new ThreadingServiceImpl();
    }

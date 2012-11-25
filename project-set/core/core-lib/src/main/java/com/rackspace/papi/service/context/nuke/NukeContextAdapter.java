@@ -29,10 +29,8 @@ import org.atomnuke.service.introspection.ServicesInterrogatorImpl;
 public class NukeContextAdapter implements ContextAdapter {
 
    private final ServicesInterrogator servicesInterrogator;
-   private final ServiceManager serviceManager;
 
    public NukeContextAdapter(ServiceManager serviceManager) {
-      this.serviceManager = serviceManager;
       this.servicesInterrogator = new ServicesInterrogatorImpl(serviceManager);
    }
 

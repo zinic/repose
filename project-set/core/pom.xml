@@ -27,19 +27,19 @@
          <dependency>
             <groupId>org.atomnuke</groupId>
             <artifactId>nuke</artifactId>
-            <version>1.1.5</version>
+            <version>1.1.6-SNAPSHOT</version>
          </dependency>
 
          <dependency>
             <groupId>org.atomnuke.container</groupId>
             <artifactId>container-core</artifactId>
-            <version>1.1.5</version>
+            <version>1.1.6-SNAPSHOT</version>
          </dependency>
 
          <dependency>
             <groupId>org.atomnuke.container</groupId>
             <artifactId>fallout</artifactId>
-            <version>1.1.5</version>
+            <version>1.1.6-SNAPSHOT</version>
          </dependency>
 
          <dependency>
